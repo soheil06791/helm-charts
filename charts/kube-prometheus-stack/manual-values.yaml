@@ -6,15 +6,30 @@ prometheus:
       cert-manager.io/cluster-issuer: "letsencrypt-prod"
     ingressClassName: "traefik"
     hosts:
+      - "prometheus.feralwolf.ir"
+    paths:
+      - /
+    tls:
+      - hosts:
+          - "prometheus.feralwolf.ir"
+        secretName: "prometheus-argocd-secret"
+    servicePort: 80
+ 
+
+grafana:
+  enabled: true
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    ingressClassName: "traefik"
+    hosts:
       - "monitor.feralwolf.ir"
     paths:
       - /
     tls:
       - hosts:
           - "monitor.feralwolf.ir"
-        secretName: "monitor-argocd-secret"
+        secretName: "grafana-argocd-secret"
     servicePort: 80
-  prometheusSpec:
-    routePrefix: /
-  service:
-    port: 80
+    
