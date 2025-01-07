@@ -13,7 +13,6 @@ prometheus:
       - hosts:
           - "prometheus.feralwolf.ir"
         secretName: "feral-prometheus-secret"
-    servicePort: 80
  
 
 grafana:
