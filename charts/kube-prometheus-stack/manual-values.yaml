@@ -12,7 +12,7 @@ prometheus:
     tls:
       - hosts:
           - "prometheus.feralwolf.ir"
-        secretName: "prometheus-argocd-secret"
+        secretName: "feral-prometheus-secret"
     servicePort: 80
  
 
@@ -30,6 +30,6 @@ grafana:
     tls:
       - hosts:
           - "monitor.feralwolf.ir"
-        secretName: "grafana-argocd-secret"
+        secretName: "feral-grafana-secret"
     servicePort: 80
     
