@@ -13,6 +13,10 @@ prometheus:
       - hosts:
           - "prometheus.feralwolf.ir"
         secretName: "feral-prometheus-secret"
+    status:
+      loadBalancer:
+        ingress:
+          - hostname: prometheus.feralwolf.ir
     servicePort: 80
  
 
@@ -31,5 +35,9 @@ grafana:
       - hosts:
           - "monitor.feralwolf.ir"
         secretName: "feral-grafana-secret"
+    status:
+      loadBalancer:
+        ingress:
+          - hostname: monitor.feralwolf.ir
     servicePort: 80
     
